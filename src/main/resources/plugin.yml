@@ -1,0 +1,80 @@
+name: YetAnotherWorldSwitcher
+version: 1.0.1-PRERELEASE
+main: de.dennes.yetanotherworldswitcher.YetAnotherWorldSwitcher
+api-version: 1.17
+depend: [ Multiverse-Core ]
+author: denNes
+description: WorldSwitcher halt
+
+commands:
+  yaws:
+    description: Displays all available commands, depending on their permission
+    default: true
+    usage: /<command>
+    aliases: [yetanotherworldswitcher]
+    permission: yaws.command.yaws
+    permission-message: You don't have the permission to use this command. Idk why tho
+
+  switchmenu:
+    description: Opens the menu in order to switch worlds
+    default: true
+    usage: /<command>
+    aliases: [sm]
+    permission: yaws.command.sm
+    permission-message: You don't have the permission to use this command.
+
+  switchworld:
+    description: Manually sends a player to another world
+    default: true
+    usage: /<command> <world>
+    aliases: [sw]
+    permission: yaws.command.sw
+    permission-message: You don't have the permission to use this command.
+
+  whereami:
+    description: Tells in which world a player is
+    default: true
+    usage: /<command>
+    permission: yaws.command.loc
+    permission-message: You don't have the permission to use this command.
+
+  closemap:
+    description: Declines access to a map without the required permission
+    default: op
+    usage: /<command> [world]
+    aliases: [lockmap]
+    permission: yaws.command.map.lock
+    permission-message: You don't have the permission to use this command.
+
+  openmap:
+    description: Allows every player to enter a map regardless of rights
+    default: op
+    usage: /<command> [world]
+    aliases: [unlockmap]
+    permission: yaws.command.map.unlock
+    permission-message: You don't have the permission to use this command.
+
+  playerlimit:
+    description: Sets the playerlimit for a map. '-1' for unlimited. Gets the current limit when no value is provided
+    default: op
+    usage: /<command> [world] [value]
+    permission: yaws.command.map.pl
+    permission-message: You don't have the permission to use this command.
+
+permissions:
+  yaws.command.default.*:
+    description: All the basic commands for regular players / non-ops
+    children:
+      yaws.command.yaws: true
+      yaws.command.sm: true
+      yaws.command.sw: true
+      yaws.command.loc: true
+  yaws.command.map.*:
+    description: All commands for users who are allowed to manage maps
+    children:
+      yaws.command.map.lock: true
+      yaws.command.map.unlock: true
+      yaws.command.map.pl: true
+  yaws.switch.closed:
+    description: Users with this permission are allowed to join closed worlds
+    default: op

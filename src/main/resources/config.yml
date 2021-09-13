@@ -1,0 +1,53 @@
+#============================================#
+#|                                          |#
+#|    Config for YetAnotherWorldSwitcher    |#
+#|                                          |#
+#============================================#
+Config-Version: 1.0
+
+#---------------------------Do not change anything above this line----------------------------
+
+#Ways of placing worlds withing the switching-menu. Valid values are 'manually' or 'automatic'
+PlaceWorldsInMenu: automatic
+
+
+#----------------------------General Settings----------------------------
+
+#Should the NavUIItem be permanently be show in a players hotbar? Valid values are 'true' or 'false'
+NavUIItemVisible: true
+
+#Item used to trigger Navigation-UI
+NavUIItem: clock
+
+#If the NavUIItem is visible, in which hotbar-slot should it be? Valid values go from 0 to 8.
+NavUIItemSlotID: 8
+
+#Shows if a closed world should be seen by players without the required permission
+SeeClosedWorlds: true
+
+#Shows some additional information about the worldsOld in the worlds.yml like the necessary permission, the spawnposition
+#and the playerlimit. These values cannot be changed there and will be overwritten after reloading/restarting the server
+DisplayMoreInfo: false   #Known bug: Can't be undone when changed from 'true' to 'false'. No further effect
+
+#Makes use of the aliases which need to be set in the worlds.yml. Formatting-Codes are allowed: https://minecraft.fandom.com/wiki/Formatting_codes
+UseAliases: false
+
+#Makes use of custom items which need to be set in the worlds.yml. Worlds without overwrite will be set using the items below
+UseItemOverwrites: false
+
+#--------------The following settings can be overwritten per world withing the worlds.yml--------------
+
+#Item used to show available lobbys
+AvailableWorldItem: white_concrete
+
+#Item used to show current lobby
+CurrentWorldItem: red_concrete
+
+#Item used to show full lobbys
+FullWorldItem: yellow_concrete
+
+#Item used to show closed Lobbys
+ClosedWorldItem: black_concrete
+
+#Item used to display the closing-button
+CloseMenuItem: barrier

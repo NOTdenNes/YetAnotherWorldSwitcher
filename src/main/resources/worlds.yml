@@ -1,0 +1,17 @@
+#IMPORTANT: Any lines starting with a # can only be changed in the worldsOld.yml of Multiverse-Core
+#
+#Usage / Example:
+#world:
+#alias: world         (Name of the world shown as the itemname within the worldswitching-menu. Colorcodes are permitted. Overwrites default value of 'lobby x'. It is suggested to just use this if 'PlaceWorldsInMenu' is set to 'manually')
+#itemOverwrite: diamond_ore (Overwrites the default item set in the config.yml. Leave empty if you want to display the default item set in 'AvailableLobbyItem')
+#slotOverwrite: 10          (Overwrites the slot if 'PlaceWorldsInMenu' is set to 'manually'. Valid slot-ids go from 9 to 44: https://wiki.vg/File:DoubleChest-slots.png)
+##permission: org.bukkit.permissions.Permission@'randomNumbers'
+##spawnlocation:      (Should be self-explanatory)
+##  x: 0.0
+##  y: 76.0
+##  z: 0.0
+##  pitch: 0.0
+##  yaw: 0.0
+##playerLimit: -1      (Can be changed within the multiverses worldsOld.yml only)
+#accessible: false     (Needs to be changed manually if order to appear in the worldswitching-menu. Default is 'false')
+#isClosed: false       (Needs to be changed manually too. If true, a permission is required in order to join closed worldsOld. Default is 'false')
