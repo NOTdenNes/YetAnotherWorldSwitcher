@@ -219,7 +219,7 @@ public class listeners implements Listener
         else
         {
             Player p = e.getPlayer();
-            if((p.getInventory().getItem(plugin.getConfig().getInt("NavUIItemSlotID")).isSimilar(getNavItem())))
+            if((p.getInventory().getItem(plugin.getConfig().getInt("NavUIItemSlotID")) == null) || (p.getInventory().getItem(plugin.getConfig().getInt("NavUIItemSlotID")).isSimilar(getNavItem())))
             {
                 p.getInventory().remove(getNavItem());
             }
