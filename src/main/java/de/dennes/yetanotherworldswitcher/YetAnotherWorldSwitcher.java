@@ -2,10 +2,13 @@ package de.dennes.yetanotherworldswitcher;
 
 import com.onarandombox.MultiverseCore.MultiverseCore;
 import de.dennes.yetanotherworldswitcher.commands.*;
+import de.dennes.yetanotherworldswitcher.config.update;
 import de.dennes.yetanotherworldswitcher.config.worlds;
 import de.dennes.yetanotherworldswitcher.events.listeners;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.logging.Logger;
 
 public final class YetAnotherWorldSwitcher extends JavaPlugin
 {
@@ -15,6 +18,7 @@ public final class YetAnotherWorldSwitcher extends JavaPlugin
     @Override
     public void onEnable()
     {
+        Logger logger = this.getLogger();
         getServer().getPluginManager().registerEvents(new listeners(), this);
         core = (MultiverseCore) Bukkit.getServer().getPluginManager().getPlugin("Multiverse-Core");
 
@@ -36,6 +40,15 @@ public final class YetAnotherWorldSwitcher extends JavaPlugin
         {
             this.getLogger().severe("Value '" + this.getConfig().getString("PlaceWorldsInMenu") + "' in your config.yml is not a valid value");
         }
+
+        new update(this, 96321).getVersion(version ->
+        {
+            if (!this.getDescription().getVersion().equalsIgnoreCase(version))
+            {
+                logger.info("There is a new update available.");
+            }
+        }
+        );
     }
 
     @Override
